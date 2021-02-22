@@ -13,6 +13,11 @@ pipeline {
                 git 'https://github.com/Ajay-Chidambaram/my-app.git'
             }
         }
+        stage('Access to Docker') {
+            steps {
+                sh "sudo chmod 666  /var/run/docker.sock"
+            }
+        }
         stage('Building our image') {
             steps{
                 script {
