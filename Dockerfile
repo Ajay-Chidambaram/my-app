@@ -1,7 +1,7 @@
 FROM node:latest as node
 RUN mkdir -p app
 WORKDIR /app
-COPY . .
+COPY . /app
 RUN npm install
 RUN npm run build --prod
 
